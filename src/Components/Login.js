@@ -35,7 +35,7 @@ const handlePass = (e) =>{
 }
 const onsubmit = (e) =>{
     const reg =   {
-    Username: usernameReg,
+    userName: usernameReg,
     email: emailReg,
     password: passwordReg
   }
