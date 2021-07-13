@@ -35,18 +35,18 @@ const handlePass = (e) =>{
 }
 const onsubmit = (e) =>{
     const reg =   {
-    userName: usernameReg,
+    Username: usernameReg,
     email: emailReg,
     password: passwordReg
   }
   axios.post('http://localhost:4000/signup',reg)
-          .then(respose => console.log(respose.data ))
+          .then(respose => window.location='/signin')
           .catch(error => console.log(error))
-  window.location('/signin')
+   
 }
   return(
     <Container className={classes.container} maxWidth="sm">
-      <form onSubmit={onsubmit}>
+      
         <Grid container spacing={2}>
         <Grid item xs={12}>
             <TextField fullWidth label="Username" name="Username" size="small" variant="outlined" onChange={handleUser} />
@@ -67,12 +67,12 @@ const onsubmit = (e) =>{
             />
           </Grid>
           <Grid item xs={12}>
-            <Button color="secondary" fullWidth type="submit" variant="contained">
+            <Button color="secondary" onClick={onsubmit} fullWidth type="submit" variant="contained">
               Sign Up
             </Button>
           </Grid>
         </Grid>
-      </form>
+
     </Container>
   )
 }

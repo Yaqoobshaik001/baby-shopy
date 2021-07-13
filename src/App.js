@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const hadlesubmit = () =>{
-    window.location='/home'
+    window.location='/signup'
   }
   return (
     
@@ -39,13 +39,14 @@ function App() {
         <Typography variant="h6" className={classes.title}>
           Baby-Shopy
         </Typography>
-        <Button color="inherit" onClick={hadlesubmit}>Login</Button>
+        <Button color="inherit" onClick={hadlesubmit}>SignUp</Button>
+        <Button color="inherit" onClick={hadlesubmit}>LogIn</Button>
       </Toolbar>
     </AppBar>
     <Router >
     <Switch>
    
-      <Route path="/home">
+      <Route path="/signup">
         <Home />
       </Route>
       <Route path="/signin">
