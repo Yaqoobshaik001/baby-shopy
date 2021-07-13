@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Login = () => {
-let error =false;
+let filedserror =false;
 const classes = useStyles();
 const [usernameReg, setUsernameReg] = useState("");
 const [passwordReg, setPasswordReg] = useState("");
@@ -34,6 +34,8 @@ const handlePass = (e) =>{
   // console.log(passwordReg);
 }
 const onsubmit = (e) =>{
+  if(usernameReg !== '' && emailReg !== '' && passwordReg !== '' ){
+  
     const reg =   {
     userName: usernameReg,
     email: emailReg,
@@ -43,6 +45,7 @@ const onsubmit = (e) =>{
           .then(respose => window.location='/signin')
           .catch(error => console.log(error))
    
+}
 }
   return(
     <Container className={classes.container} maxWidth="sm">
@@ -72,7 +75,7 @@ const onsubmit = (e) =>{
             </Button>
           </Grid>
         </Grid>
-
+      {/* {filedserror && ( <ErrorSpan value="Fill all the fields"/>)} */}
     </Container>
   )
 }
